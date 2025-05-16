@@ -14,7 +14,6 @@ def bot():
         # URL base do seu deploy: Render define isso como HOST_DYNAMIC
         base = request.url_root.rstrip('/')  
         img_url = f"{base}{url_for('static', filename='congresso.png')}"
-        pdf_url = f"{base}{url_for('static', filename='programacao.pdf')}"
 
         texto = (
             "Olá, Seja Bem-Vindo(a)!\n"
@@ -48,7 +47,6 @@ def bot():
 
         msg.body(texto)
         msg.media(img_url)
-        msg.media(pdf_url)
 
     else:
         msg.body("Desculpe, não entendi. Digite algo contendo 'interesse' para receber informações.")
