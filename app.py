@@ -12,9 +12,10 @@ def bot():
 
     if 'interesse' in incoming:
         # URL base do seu deploy: Render define isso como HOST_DYNAMIC
-        base = request.url_root.rstrip('/')  
-        img_url = f"{base}{url_for('static', filename='congresso.png')}"
-
+        # base = request.url_root.rstrip('/')  
+        # img_url = f"{base}{url_for('static', filename='congresso.png')}"
+	
+	link = "https://www.instagram.com/p/DH_n_FhMlXV/"
         texto = (
             "Olá, Seja Bem-Vindo(a)!\n"
             "Sou da equipe de Consultores Comerciais da WAP Cursos. Recebemos sua mensagem e ficamos felizes pelo seu interesse no 3° Congresso de Contratações Públicas do Nordeste.\n\n"
@@ -44,9 +45,10 @@ def bot():
             "- (92) 99988-9069 - Blenda Libório | Consultora Comercial\n\n"
             "Estamos à disposição para esclarecer suas dúvidas."
         )
-
+	
+	msg.body(link)
         msg.body(texto)
-        msg.media(img_url)
+        #msg.media(img_url)
 
     else:
         msg.body("Desculpe, não entendi. Digite algo contendo 'interesse' para receber informações.")
